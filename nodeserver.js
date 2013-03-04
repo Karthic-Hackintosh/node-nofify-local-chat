@@ -4,7 +4,7 @@ var server = net.createServer(function(conn) {
 	console.log('Connected with the Client');
 	
 	conn.on('data',function(data) {
-		console.log(data + 'from' + conn.remoteAddress + ' ' + 'PORT:' + coon.remotePort);
+		console.log(data + 'from' + conn.remoteAddress + ' ' + 'PORT:' + conn.remotePort);
 		var msg = "notify-send" + " " + data;
 		child = exec('notify-send test',function (error, stdout, stderr) {
 			 console.log('stderr: ' + stderr);
